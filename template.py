@@ -20,16 +20,3 @@ def algorithm_name(year):
     result = helper_function(year)
 
     return result
-
-
-# 5. MAIN FUNCTION
-def main():
-
-    for data in sample_data:
-        result = algorithm_name(data)
-        print(f"Input: {data}, Output: {result}")
-
-
-# 6. PROGRAM START
-if __name__ == "__main__":
-    main()

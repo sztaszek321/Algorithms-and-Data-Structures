@@ -9,7 +9,7 @@ FUNCTION easter_G(year)
         easter = "19-04-" + year
     ELSEIF d == 28 and e == 6
         easter = "18-04-" + year
-    ELSEa
+    ELSE
         IF d + e > 9
             IF d + e < 19
                 h = "0"
