@@ -1,3 +1,5 @@
+from GraphAlgorithms.graph_coloring_LF import lf_main
+from GraphAlgorithms.graph_coloring_SL import sl_main
 from GraphAlgorithms.kruskal_spanning_forest import kruskal_main
 from GraphAlgorithms.spanning_forest import spanning_forest_main
 from GraphAlgorithms.nearest_neighbour import nearest_neighbour_main
@@ -162,6 +164,76 @@ print("--- Prim ---")
 for d in data_k_p:
     print(d)
     spanning_forest_main(None, d)
+    print(" ")
+
+color_data1 = {
+    "A": {"B", "C"},
+    "B": {"D", "E"},
+    "C": {"B", "D"},
+    "D": {"E"},
+    "E": {}
+}
+
+color_data2 = [
+    ("A", "B"),
+    ("A", "C"),
+    ("B", "D"),
+    ("B", "E"),
+    ("C", "B"),
+    ("C", "D"),
+    ("D", "E")
+]
+
+color_data3 = [
+    ("a", "b"),
+    ("a", "f"),
+    ("a", "g"),
+    ("b", "c"),
+    ("b", "g"),
+    ("c", "d"),
+    ("c", "g"),
+    ("d", "e"),
+    ("d", "g"),
+    ("e", "f"),
+    ("e", "g"),
+    ("f", "g"),
+] #example from: https://en.wikipedia.org/wiki/Recursive_largest_first_algorithm
+
+color_data4 = [
+    ("a", "d"),
+    ("a", "i"),
+    ("b", "d"),
+    ("c", "d"),
+    ("c", "e"),
+    ("c", "g"),
+    ("d", "k"),
+    ("d", "i"),
+    ("d", "g"),
+    ("d", "f"),
+    ("d", "e"),
+    ("e", "g"),
+    ("g", "j"),
+    ("h", "i"),
+    ("j", "k"),
+] #example from: lecture
+
+color_data5 = {
+    "A": {"B", "C", "D"},
+    "B": {"C", "E", "F", "G"},
+    "C": {"D", "E"},
+    "D": {"E"},
+    "E": {"F", "G"},
+    "F": {},
+    "G": {},
+} #example from: lecture
+
+color_data = [color_data1, color_data2, color_data3, color_data4, color_data5]
+
+print("--- Graph Coloring LF/SL ---")
+
+for d in color_data:
+    lf_main(d)
+    sl_main(d)
     print(" ")
 
 
